@@ -11,7 +11,7 @@ import Image from "next/image"
 import { projectsData } from "@/components/data/Data"
 import SliderButtons from "@/components/swiper/SliderButtons"
 
-const page = () => {
+const Projects = () => {
 
     const [project, setProject] = useState(projectsData[0])
 
@@ -75,9 +75,9 @@ const page = () => {
                                         key={i}
                                         className="w-full cursor-grab"
                                     >
-                                        <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
-                                            <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
-                                            <div className="relative w-full h-full">
+                                        <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20 rounded-2xl">
+                                            <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10 rounded-2xl"></div>
+                                            <div className="relative w-full h-full rounded-2xl">
                                                 <Image
                                                     src={item.image}
                                                     fill
@@ -89,18 +89,17 @@ const page = () => {
                                     </SwiperSlide>
                                 )
                             }
-                            <SliderButtons 
+                            <SliderButtons
                                 containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
-                                btnStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all"
+                                btnStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all rounded-full"
                                 iconStyles=""
                             />
                         </Swiper>
                     </div>
-
                 </div>
             </div>
         </motion.div>
     )
 }
 
-export default page
+export default Projects
