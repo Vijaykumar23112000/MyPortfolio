@@ -31,18 +31,17 @@ const ContactForm = () => {
         form.current.reset();
     }
 
-    const handleReset = () => {
+    const handleReset = e => {
+        e.preventDefault()
         form.current.reset()
         setStatus(IDLE);
     }
 
     useEffect(() => {
-        if (status) {
-            const timer = setTimeout(() => {
-                setStatus(IDLE)
-            }, 5000);
-            return () => clearTimeout(timer);
-        }
+        const timer = setTimeout(() => {
+            setStatus(IDLE)
+        }, 5000);
+        return () => clearTimeout(timer);
     }, [status]);
 
     return (
@@ -67,7 +66,7 @@ const ContactForm = () => {
                     name={contactData.textArea.name}
                 />
                 <div className="flex gap-5 items-center">
-                    <Button type="submit" size="md" className="max-w-40">Send</Button>
+                    <Button size="md" className="max-w-40">Send</Button>
                     <Button size="md" onClick={handleReset} className="max-w-40">Reset</Button>
                     {status === SUCCESS && <AnimatedMessage sequence={["Sent Successfully", 1000]} />}
                     {status === FAILED && <AnimatedMessage sequence={["Sent Failed", 1000]} />}

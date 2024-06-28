@@ -26,9 +26,13 @@ module.exports = {
       colors: {
         primary: "#1c1c22",
         accent: {
-          DEFAULT: "#00ff99",
-          hover: "#00e187"
+          // DEFAULT: "#00ff99",
+          // hover: "#00e187"
+          DEFAULT: "#D2042D",
+          hover: "#FF3131"
         },
+        light: "	#fafafa",
+        light_card_bg: "#d2d3db"
       },
       keyframes: {
         "accordion-down": {
@@ -47,4 +51,5 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
+  darkMode: 'class',
 }

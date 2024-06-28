@@ -4,22 +4,30 @@
 
 @layer base {
   body {
-    @apply font-primary bg-primary text-white leading-loose
+    @apply font-primary bg-light dark:bg-primary text-white leading-loose
   }
-  .h1{
+
+  .h1 {
     @apply text-[40px] xl:text-[70px] leading-[1.1] font-semibold
   }
-  .h2{
+
+  .h2 {
     @apply text-[36px] xl:text-[48px] leading-[1.1] font-semibold
   }
-  .h3{
+
+  .h3 {
     @apply text-[20px] xl:text-[24px] leading-[1.1] font-semibold
   }
-  .text-outline{
+
+  .text-outline {
     -webkit-text-stroke: 1px #ffffff;
   }
-  .text-outline-hover{
+
+  .text-outline-hover {
     -webkit-text-stroke: 1px #00ff99;
   }
 
+  * {
+    @apply transition-colors duration-200
+  }
 }

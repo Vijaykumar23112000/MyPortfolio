@@ -14,7 +14,8 @@ const Photo = () => {
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1, transition: { delay: 2, duration: 0.4, ease: "easeIn" } }}
-                    className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten absolute"
+                    className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten absolute rounded-full overflow-hidden"
+                    style={{ borderRadius: "50%" }}
                 >
                     <Image
                         src={photo}
@@ -26,10 +27,9 @@ const Photo = () => {
                     />
                 </motion.div>
                 <motion.svg
-                    fill="transparent"
                     viewBox="0 0 506 506"
                     xmlns="http://www.w3.org/2000/svg"
-                    className="w-[300px] xl:w-[506px] h-[300px] xl:h-[506px]"
+                    className="w-[300px] xl:w-[506px] h-[300px] xl:h-[506px] dark:fill-transparent"
                 >
                     <motion.circle
                         cx="253"

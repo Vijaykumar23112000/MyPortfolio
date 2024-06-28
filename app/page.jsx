@@ -12,11 +12,11 @@ const Home = () => {
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-[0.5rem] xl:pb-[1rem]">
 
           <div className="text-center xl:text-left order-2 xl:order-none">
-            <span className="text-xl">{personal.signature}</span>
-            <h1 className="h1 mb-6">
+            <span className="text-xl dark:text-white/80 text-black/80 font-bold">{personal.signature}</span>
+            <h1 className="h1 mb-6 dark:text-white/80 text-black/80">
               Hello I'm  <br /> <span className="text-accent">{personal.fullName}</span>
             </h1>
-            <p className="max-w-[500px] mb-6 text-white/80">
+            <p className="max-w-[500px] mb-6 dark:text-white/80 text-black/80">
               {personal.bio}
             </p>
             <div className="flex flex-col xl:flex-row items-center gap-8">

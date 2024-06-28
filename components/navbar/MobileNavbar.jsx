@@ -27,7 +27,7 @@ const MobileNavbar = () => {
                             <Link
                                 key={i}
                                 href={item.path}
-                                className={`${item.path === pathname && "text-accent border-b-2 border-accent"} text-xl capitalize hover:text-accent transition-all`}
+                                className={`${item.path === pathname && "text-accent border-b-2 border-accent"} text-xl capitalize hover:text-accent transition-all dark:text-white/80 text-black/80`}
                             >
                                 {item.name}
                             </Link>
