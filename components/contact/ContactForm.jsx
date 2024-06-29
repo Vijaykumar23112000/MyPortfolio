@@ -46,11 +46,11 @@ const ContactForm = () => {
 
     return (
         <div className="xl:w-[54%] order-2 xl:order-none">
-            <form className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl" onSubmit={handleSubmit} ref={form}>
+            <form className="flex flex-col gap-6 p-10 bg-light_card_bg dark:bg-[#27272c] rounded-xl" onSubmit={handleSubmit} ref={form}>
                 <h3 className="text-4xl text-accent">
                     {contactData.title}
                 </h3>
-                <p className="text-white/60">
+                <p className="dark:text-white/60 text-black/80">
                     {contactData.description}
                 </p>
                 <div className="grid grid-cols-1 gap-6">

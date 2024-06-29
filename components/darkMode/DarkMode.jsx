@@ -31,7 +31,9 @@ const DarkMode = () => {
 
     return (
         <Button onClick={handleToggleTheme}>
-            {theme === 'light' ? <FiMoon /> : <FiSun />}
+            <div>
+                {theme === 'light' ? <FiMoon /> : <FiSun />}
+            </div>
         </Button>
     )
 

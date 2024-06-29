@@ -24,10 +24,20 @@
   }
 
   .text-outline-hover {
-    -webkit-text-stroke: 1px #00ff99;
+    -webkit-text-stroke: 1px #D2042D;
   }
 
   * {
     @apply transition-colors duration-200
   }
+
+  *::selection {
+    color: black;
+    background: #D2042D;
+  }
+
+  .glow {
+    filter: drop-shadow(0 0 10px #D2042D);
+  }
+
 }

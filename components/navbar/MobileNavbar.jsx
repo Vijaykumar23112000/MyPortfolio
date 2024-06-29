@@ -1,7 +1,7 @@
 "use client"
 
 import { usePathname } from "next/navigation"
-import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet"
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from "../ui/sheet"
 import Link from "next/link"
 import { CiMenuFries } from 'react-icons/ci'
 import { navData } from "../data/Data"
@@ -29,7 +29,9 @@ const MobileNavbar = () => {
                                 href={item.path}
                                 className={`${item.path === pathname && "text-accent border-b-2 border-accent"} text-xl capitalize hover:text-accent transition-all dark:text-white/80 text-black/80`}
                             >
-                                {item.name}
+                                <SheetClose>
+                                    {item.name}
+                                </SheetClose>
                             </Link>
                         )
                     }

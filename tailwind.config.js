@@ -31,7 +31,7 @@ module.exports = {
           DEFAULT: "#D2042D",
           hover: "#FF3131"
         },
-        light: "	#fafafa",
+        light: "#fafafa",
         light_card_bg: "#d2d3db"
       },
       keyframes: {

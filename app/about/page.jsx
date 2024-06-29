@@ -27,17 +27,17 @@ const About = () => {
 
                         <TabsContent value="experience" className="w-full mb-10">
                             <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                                <h3 className="text-4xl font-bold">{experienceData.title}</h3>
-                                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{experienceData.description}</p>
+                                <h3 className="text-4xl font-bold dark:text-white/80 text-black/80">{experienceData.title}</h3>
+                                <p className="max-w-[600px] dark:text-white/60 text-black/80 mx-auto xl:mx-0">{experienceData.description}</p>
                                 <ScrollArea className="h-[400px]">
                                     <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
                                         {
                                             experienceData.items.map((item, i) =>
-                                                <li key={i} className="bg-[#232329] h-[120px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
-                                                    <h3 className="text-accent text-xl max-w-[265px] min-h-[60px] text-center lg:text-left">{item.content}</h3>
+                                                <li key={i} className="dark:bg-[#232329] bg-light_card_bg h-[120px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
+                                                    <h3 className="text-accent text-xl max-w-[265px] min-h-[60px] text-center lg:text-left font-bold">{item.content}</h3>
                                                     <div className="flex items-center gap-3">
                                                         <span className="w-[6px] h-[6px] bg-accent rounded-full"></span>
-                                                        <p className="text-white/60 ">{item.duration}</p>
+                                                        <p className="dark:text-white/60 text-black/80 font-bold">{item.duration}</p>
                                                     </div>
                                                 </li>
                                             )
@@ -50,18 +50,18 @@ const About = () => {
 
                         <TabsContent value="education" className="w-full mb-10">
                             <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                                <h3 className="text-4xl font-bold">{educationData.title}</h3>
-                                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{educationData.description}</p>
+                                <h3 className="text-4xl font-bold dark:text-white/80 text-black/80">{educationData.title}</h3>
+                                <p className="max-w-[600px] dark:text-white/60 text-black/80 mx-auto xl:mx-0">{educationData.description}</p>
                                 <ScrollArea className="h-[400px]">
                                     <ul className="grid grid-cols-1 gap-[30px]">
                                         {
                                             educationData.items.map((item, i) =>
-                                                <li key={i} className="bg-[#232329] h-[270px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
+                                                <li key={i} className="font-bold dark:bg-[#232329] bg-light_card_bg h-[270px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
                                                     <h3 className="text-accent text-xl max-w-[265px] min-h-[60px] text-center lg:text-left">{item.institution}</h3>
-                                                    <span>{item.degree}</span>
+                                                    <span className="dark:text-white/60 text-black/80">{item.degree}</span>
                                                     <div className="flex items-center gap-3">
                                                         <span className="w-[6px] h-[6px] bg-accent rounded-full"></span>
-                                                        <p className="text-white/60 ">{item.duration}</p>
+                                                        <p className="dark:text-white/60 text-black/80">{item.duration}</p>
                                                     </div>
                                                 </li>
                                             )
@@ -74,8 +74,8 @@ const About = () => {
                         <TabsContent value="skills" className="w-full h-full mb-10">
                             <div className="flex flex-col gap-[30px]">
                                 <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                                    <h3 className="text-4xl font-bold">{skillsData.title}</h3>
-                                    <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{skillsData.description}</p>
+                                    <h3 className="text-4xl font-bold dark:text-white/80 text-black/80">{skillsData.title}</h3>
+                                    <p className="max-w-[600px] dark:text-white/60 text-black/80 mx-auto xl:mx-0">{skillsData.description}</p>
                                 </div>
                                 <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px] ">
                                     {
@@ -83,8 +83,8 @@ const About = () => {
                                             <li key={i}>
                                                 <TooltipProvider delayDuration={100}>
                                                     <Tooltip>
-                                                        <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
-                                                            <div className="text-6xl group-hover:text-accent transition-all duration-300">
+                                                        <TooltipTrigger className="w-full h-[150px] dark:bg-[#232329] bg-light_card_bg rounded-xl flex justify-center items-center group">
+                                                            <div className="text-6xl dark:text-white/60 text-black/80 group-hover:text-accent transition-all duration-300">
                                                                 {item.icon}
                                                             </div>
                                                         </TooltipTrigger>
@@ -103,15 +103,15 @@ const About = () => {
 
                         <TabsContent value="about" className="w-full text-center xl:text-left mb-10">
                             <div className="flex flex-col gap-[30px]">
-                                <h3 className="text-4xl font-bold">{aboutData.title}</h3>
-                                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{aboutData.description}</p>
+                                <h3 className="text-4xl dark:text-white/80 text-black/80 font-bold">{aboutData.title}</h3>
+                                <p className="max-w-[600px] dark:text-white/60 text-black/80 mx-auto xl:mx-0">{aboutData.description}</p>
                                 <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[750px] mx-auto xl:mx-0">
                                     {
                                         aboutData.info.map((item, i) =>
                                             <li key={i} className="flex items-center justify-center xl:justify-start gap-4">
-                                                <span className="text-white/60 text-sm">{item.fieldName}</span>
+                                                <span className="dark:text-white/60 text-black/80 text-sm font-semibold">{item.fieldName}</span>
                                                 <span className="text-accent">:</span>
-                                                <span>{item.fieldValue}</span>
+                                                <span className="dark:text-white/60 text-black/80 font-bold">{item.fieldValue}</span>
                                             </li>
                                         )
                                     }

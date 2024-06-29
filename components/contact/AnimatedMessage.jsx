@@ -9,7 +9,7 @@ const AnimatedMessage = ({ sequence }) =>
         speed={50}
         style={{ display: 'inline-block' }}
         repeat={Infinity}
-        className="text-white/60"
+        className="text-black/80 dark:text-white/60"
     />
 
 export default AnimatedMessage

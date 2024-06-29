@@ -29,31 +29,31 @@ const Projects = () => {
                     <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
                         <div className="flex flex-col gap-[30px] h-[50%]">
                             <div className="flex items-center gap-4 justify-between">
-                                <span className="text-8xl leading-none font-extrabold text-transparent text-outline">{project.num}</span>
-                                <Link href={project.github}>
+                                <span className="text-8xl leading-none font-extrabold text-primary dark:text-transparent text-outline">{project.num}</span>
+                                <Link href={project.github} target="_blank">
                                     <TooltipProvider delayDuration={100}>
                                         <Tooltip>
-                                            <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                                                <BsGithub className="text-white text-3xl group-hover:text-accent" />
+                                            <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-black/50 dark:bg-white/5 flex justify-center items-center group">
+                                                <BsGithub className="dark:text-white text-light text-3xl group-hover:text-accent" />
                                             </TooltipTrigger>
                                             <TooltipContent>
-                                                <p>Github Repo</p>
+                                                <p className="dark:text-white/80 text-black/80">Github Repo</p>
                                             </TooltipContent>
                                         </Tooltip>
                                     </TooltipProvider>
                                 </Link>
                             </div>
-                            <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
+                            <h2 className="text-[42px] font-bold leading-none dark:text-white text-black/80 group-hover:text-accent transition-all duration-500 capitalize">
                                 {project.category} Project
                             </h2>
-                            <p className="text-white/60">
+                            <p className="dark:text-white/60 text-black/80">
                                 {project.description}
                             </p>
-                            <div className="border border-white/20"></div>
+                            <div className="border border-black/50 dark:border-white/20"></div>
                             <ul className="flex gap-2 flex-wrap">
                                 {
                                     project.stack.map((item, i) =>
-                                        <li key={i} className="text-accent">
+                                        <li key={i} className="text-accent font-bold">
                                             {item.name}
                                             {i !== project.stack.length - 1 && ","}
                                         </li>
