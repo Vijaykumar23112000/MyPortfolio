@@ -1,7 +1,7 @@
 "use client"
 
 import CountUp from "react-countup"
-import { stats } from "../data/Data"
+import { statsData } from "../data/Data"
 
 const Stats = () => {
     return (
@@ -9,7 +9,7 @@ const Stats = () => {
             <div className="container mx-auto">
                 <div className="flex flex-wrap gap-6 max-w-[80vw] mx-auto xl:max-w-none">
                     {
-                        stats.map((item, i) =>
+                        statsData.map((item, i) =>
                             <div key={i} className="flex-1 flex gap4 items-center justify-center xl:justify-start">
                                 <CountUp
                                     end={item.num}

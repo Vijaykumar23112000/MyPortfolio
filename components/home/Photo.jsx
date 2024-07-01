@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { photo } from "../data/Data"
+import { photoData } from "../data/Data"
 
 const Photo = () => {
     return (
@@ -18,7 +18,7 @@ const Photo = () => {
                     style={{ borderRadius: "50%" }}
                 >
                     <Image
-                        src={photo}
+                        src={photoData.img}
                         priority
                         quality={100}
                         fill

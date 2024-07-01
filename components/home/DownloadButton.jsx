@@ -2,13 +2,13 @@
 
 import { FiDownload } from "react-icons/fi"
 import { Button } from "../ui/button"
-import { cvPath } from "../data/Data"
+import { cvPathData } from "../data/Data"
 
 const DownloadButton = () => {
 
     const handleDownloadCV = () => {
         const anchor = document.createElement('a');
-        anchor.href = cvPath;
+        anchor.href = cvPathData.cv;
         anchor.download = 'cv.pdf';
         anchor.click();
     }

@@ -1,11 +1,11 @@
 import Link from "next/link"
-import { socials } from "../data/Data"
+import { socialsData } from "../data/Data"
 
 const Socials = ({ containerStyles, iconStyles }) => {
     return (
         <div className={containerStyles}>
             {
-                socials.map((item, i) =>
+                socialsData.map((item, i) =>
                     <Link
                         key={i}
                         href={item.path}

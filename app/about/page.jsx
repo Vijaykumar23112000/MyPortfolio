@@ -4,7 +4,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { motion } from "framer-motion"
-import { experienceData, educationData, skillsData, aboutData } from "@/components/data/Data"
+import { aboutMeData } from "@/components/data/Data"
 
 const About = () => {
     return (
@@ -27,12 +27,12 @@ const About = () => {
 
                         <TabsContent value="experience" className="w-full mb-10">
                             <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                                <h3 className="text-4xl font-bold dark:text-white/80 text-black/80">{experienceData.title}</h3>
-                                <p className="max-w-[600px] dark:text-white/60 text-black/80 mx-auto xl:mx-0">{experienceData.description}</p>
+                                <h3 className="text-4xl font-bold dark:text-white/80 text-black/80">{aboutMeData.experienceData.title}</h3>
+                                <p className="max-w-[600px] dark:text-white/60 text-black/80 mx-auto xl:mx-0">{aboutMeData.experienceData.description}</p>
                                 <ScrollArea className="h-[400px]">
                                     <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
                                         {
-                                            experienceData.items.map((item, i) =>
+                                            aboutMeData.experienceData.items.map((item, i) =>
                                                 <li key={i} className="dark:bg-[#232329] bg-light_card_bg h-[120px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
                                                     <h3 className="text-accent text-xl max-w-[265px] min-h-[60px] text-center lg:text-left font-bold">{item.content}</h3>
                                                     <div className="flex items-center gap-3">
@@ -50,12 +50,12 @@ const About = () => {
 
                         <TabsContent value="education" className="w-full mb-10">
                             <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                                <h3 className="text-4xl font-bold dark:text-white/80 text-black/80">{educationData.title}</h3>
-                                <p className="max-w-[600px] dark:text-white/60 text-black/80 mx-auto xl:mx-0">{educationData.description}</p>
+                                <h3 className="text-4xl font-bold dark:text-white/80 text-black/80">{aboutMeData.educationData.title}</h3>
+                                <p className="max-w-[600px] dark:text-white/60 text-black/80 mx-auto xl:mx-0">{aboutMeData.educationData.description}</p>
                                 <ScrollArea className="h-[400px]">
                                     <ul className="grid grid-cols-1 gap-[30px]">
                                         {
-                                            educationData.items.map((item, i) =>
+                                            aboutMeData.educationData.items.map((item, i) =>
                                                 <li key={i} className="font-bold dark:bg-[#232329] bg-light_card_bg h-[270px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
                                                     <h3 className="text-accent text-xl max-w-[265px] min-h-[60px] text-center lg:text-left">{item.institution}</h3>
                                                     <span className="dark:text-white/60 text-black/80">{item.degree}</span>
@@ -74,12 +74,12 @@ const About = () => {
                         <TabsContent value="skills" className="w-full h-full mb-10">
                             <div className="flex flex-col gap-[30px]">
                                 <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                                    <h3 className="text-4xl font-bold dark:text-white/80 text-black/80">{skillsData.title}</h3>
-                                    <p className="max-w-[600px] dark:text-white/60 text-black/80 mx-auto xl:mx-0">{skillsData.description}</p>
+                                    <h3 className="text-4xl font-bold dark:text-white/80 text-black/80">{aboutMeData.skillsData.title}</h3>
+                                    <p className="max-w-[600px] dark:text-white/60 text-black/80 mx-auto xl:mx-0">{aboutMeData.skillsData.description}</p>
                                 </div>
                                 <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px] ">
                                     {
-                                        skillsData.skillList.map((item, i) =>
+                                        aboutMeData.skillsData.skillList.map((item, i) =>
                                             <li key={i}>
                                                 <TooltipProvider delayDuration={100}>
                                                     <Tooltip>
@@ -103,11 +103,11 @@ const About = () => {
 
                         <TabsContent value="about" className="w-full text-center xl:text-left mb-10">
                             <div className="flex flex-col gap-[30px]">
-                                <h3 className="text-4xl dark:text-white/80 text-black/80 font-bold">{aboutData.title}</h3>
-                                <p className="max-w-[600px] dark:text-white/60 text-black/80 mx-auto xl:mx-0">{aboutData.description}</p>
+                                <h3 className="text-4xl dark:text-white/80 text-black/80 font-bold">{aboutMeData.aboutData.title}</h3>
+                                <p className="max-w-[600px] dark:text-white/60 text-black/80 mx-auto xl:mx-0">{aboutMeData.aboutData.description}</p>
                                 <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[750px] mx-auto xl:mx-0">
                                     {
-                                        aboutData.info.map((item, i) =>
+                                        aboutMeData.aboutData.info.map((item, i) =>
                                             <li key={i} className="flex items-center justify-center xl:justify-start gap-4">
                                                 <span className="dark:text-white/60 text-black/80 text-sm font-semibold">{item.fieldName}</span>
                                                 <span className="text-accent">:</span>
