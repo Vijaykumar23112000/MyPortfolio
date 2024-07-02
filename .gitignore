@@ -37,4 +37,4 @@ next-env.d.ts
 
 
 info.md
-.env
+.env.local
