@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedinIn, FaInstagram, FaHtml5, FaCss3, FaJava, FaPython, FaReact, FaDocker } from "react-icons/fa"
+import { FaGithub, FaLinkedinIn, FaInstagram, FaHtml5, FaCss3, FaJava, FaPython, FaReact, FaDocker, FaPhoneAlt, FaEnvelope } from "react-icons/fa"
 import { BiLogoJavascript, BiLogoMongodb, BiLogoPostgresql, BiLogoSpringBoot, BiLogoTailwindCss, BiLogoTypescript } from 'react-icons/bi'
 import { RiNextjsLine } from "react-icons/ri"
 import { TbBrandMysql } from "react-icons/tb"
@@ -155,4 +155,87 @@ export const aboutMeData = {
             { fieldName: "Languages", fieldValue: "English, Malayalam, Tamil" },
         ]
     }
+}
+
+export const projectsData = [
+    {
+        num: "01",
+        category: "Fullstack",
+        title: "Foodify",
+        description:
+            `This project is a full-stack food ordering system where users can order food from various restaurants 
+            managed by administrators and restaurant owners. The backend is built using Spring Boot with Spring 
+            Security to secure endpoints, and JWT for authentication and authorization based on user roles. PostgreSQL 
+            is used as the database, and Docker is employed to create an instance of pgAdmin for database management. 
+            The frontend is developed using React, with MUI for the user interface and Tailwind CSS for styling. 
+            Postman was used to test the API endpoints, ensuring robust functionality throughout the application.`,
+        stack: [
+            { name: "Springboot" },
+            { name: "Spring Security" },
+            { name: "JWT" },
+            { name: "React" },
+            { name: "MUI" },
+            { name: "Tailwind Css" },
+            { name: "React-Redux" },
+            { name: "PostgreSQL" },
+            { name: "Docker" },
+            { name: "Postman" },
+        ],
+        image: "/assets/projects/foodify.jpg",
+        github: "https://github.com/Vijaykumar23112000/foodify"
+    },
+    {
+        num: "02",
+        category: "Backend",
+        title: "JWT Auth",
+        description:
+            `This mini project focuses on backend development, specifically on implementing JWT authentication and 
+            authorization. It includes features like login and logout functionality using Spring Security and JWT. 
+            MySQL is used to store and retrieve data, and Postman was utilized to test the API endpoints, ensuring 
+            the security and functionality of the authentication system.`,
+        stack: [
+            { name: "Springboot" },
+            { name: "Spring Security" },
+            { name: "JWT" },
+            { name: "MySQL" },
+            { name: "Postman" },
+        ],
+        image: "/assets/projects/jwt.png",
+        github: "https://github.com/Vijaykumar23112000/SpringSecurityJWT"
+    },
+]
+
+export const contactMeData = {
+    contactData: {
+        title: "Get In Touch",
+        description:
+            `Drop me a line if you want to talk shop, discuss opportunities, or share your best tech meme. 
+            Let's connect and make things happen!`,
+        input: [
+            { type: "firstname", placeHolder: "Firstname", name: "user_first_name" },
+            { type: "lastname", placeHolder: "Lastname", name: "user_last_name" },
+            { type: "email", placeHolder: "Email", name: "user_email" },
+        ],
+        textArea: {
+            placeHolder: "Type your message here .",
+            name: "user_message",
+        }
+    },
+    statusData: {
+        IDLE: "IDLE",
+        SUCCESS: "SUCCESS",
+        FAILED: "FAILED"
+    },
+    contactInfoData: [
+        {
+            icon: <FaPhoneAlt />,
+            title: "Phone",
+            content: "+91 83019 51775"
+        },
+        {
+            icon: <FaEnvelope />,
+            title: "EMail",
+            content: "mathew5359302@gmail.com"
+        },
+    ]
 }

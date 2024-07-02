@@ -73,7 +73,7 @@ const Projects = () => {
                                 projectsData.map((item, i) =>
                                     <SwiperSlide
                                         key={i}
-                                        className="w-full cursor-grab"
+                                        className="w-full"
                                     >
                                         <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20 rounded-2xl">
                                             <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10 rounded-2xl"></div>
@@ -81,7 +81,7 @@ const Projects = () => {
                                                 <Image
                                                     src={item.image}
                                                     fill
-                                                    className="object-cover rounded-2xl"
+                                                    className="object-cover rounded-2xl cursor-grab"
                                                     alt={item.description}
                                                 />
                                             </div>
