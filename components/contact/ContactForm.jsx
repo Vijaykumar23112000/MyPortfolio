@@ -7,23 +7,23 @@ import { contactMeData } from "../data/Data"
 import emailjs from '@emailjs/browser';
 import React, { useEffect, useRef, useState } from 'react';
 import AnimatedMessage from "../typeAnimation/AnimatedMessage"
-import { motion, useInView } from "framer-motion"
-import { ContactSvg } from "../svg/ContactSvg"
+// import { motion, useInView } from "framer-motion"
+// import { ContactSvg } from "../svg/ContactSvg"
 
 const ContactForm = () => {
 
     const { IDLE, SUCCESS, FAILED } = contactMeData.statusData
     const [sending, setSending] = useState(false)
-    const [svgVisible, setSvgVisible] = useState(true);
+    // const [svgVisible, setSvgVisible] = useState(true);
     const form = useRef();
     const [status, setStatus] = useState(IDLE);
     const ref = useRef()
     const SERVICE_ID = process.env.NEXT_PUBLIC_SERVICE_ID
     const TEMPLATE_ID = process.env.NEXT_PUBLIC_TEMPLATE_ID
     const PUBLIC_KEY = process.env.NEXT_PUBLIC_KEY
-    const isInView = useInView(ref, {
-        margin: "-100px"
-    })
+    // const isInView = useInView(ref, {
+    //     margin: "-100px"
+    // })
 
     const handleSubmit = e => {
         setSending(true);
@@ -59,7 +59,7 @@ const ContactForm = () => {
 
     return (
         <div ref={ref} className="xl:w-[54%] order-2 xl:order-none relative">
-            {
+            {/* {
                 svgVisible && (
                     <motion.div
                         initial={{ opacity: 1 }}
@@ -74,12 +74,12 @@ const ContactForm = () => {
                         </div>
                     </motion.div>
                 )
-            }
-            <motion.div
+            } */}
+            {/* <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 4, duration: 1 }}
-            >
+            > */}
                 <form
                     className="flex flex-col gap-6 p-10 bg-light_card_bg dark:bg-[#27272c] rounded-xl"
                     onSubmit={handleSubmit}
@@ -110,7 +110,7 @@ const ContactForm = () => {
                         {status === FAILED && <AnimatedMessage sequence={["Sent Failed", 1000]} />}
                     </div>
                 </form>
-            </motion.div>
+            {/* </motion.div> */}
         </div>
     )
 }
