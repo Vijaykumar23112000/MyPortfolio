@@ -7,23 +7,17 @@ import { contactMeData } from "../data/Data"
 import emailjs from '@emailjs/browser';
 import React, { useEffect, useRef, useState } from 'react';
 import AnimatedMessage from "../typeAnimation/AnimatedMessage"
-// import { motion, useInView } from "framer-motion"
-// import { ContactSvg } from "../svg/ContactSvg"
+import { motion } from "framer-motion"
 
 const ContactForm = () => {
 
     const { IDLE, SUCCESS, FAILED } = contactMeData.statusData
     const [sending, setSending] = useState(false)
-    // const [svgVisible, setSvgVisible] = useState(true);
     const form = useRef();
     const [status, setStatus] = useState(IDLE);
-    const ref = useRef()
     const SERVICE_ID = process.env.NEXT_PUBLIC_SERVICE_ID
     const TEMPLATE_ID = process.env.NEXT_PUBLIC_TEMPLATE_ID
     const PUBLIC_KEY = process.env.NEXT_PUBLIC_KEY
-    // const isInView = useInView(ref, {
-    //     margin: "-100px"
-    // })
 
     const handleSubmit = e => {
         setSending(true);
@@ -58,60 +52,42 @@ const ContactForm = () => {
     }, [status]);
 
     return (
-        <div ref={ref} className="xl:w-[54%] order-2 xl:order-none relative">
-            {/* {
-                svgVisible && (
-                    <motion.div
-                        initial={{ opacity: 1 }}
-                        whileInView={{ opacity: 0 }}
-                        transition={{ delay: 3, duration: 1 }}
-                        exit={{ display: "none" }}
-                        onAnimationComplete={() => setSvgVisible(false)}
-                        className="stroke-accent absolute mx-auto w-full h-full flex justify-center items-center"
-                    >
-                        <div className="">
-                            <ContactSvg isInView={isInView} />
-                        </div>
-                    </motion.div>
-                )
-            } */}
-            {/* <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ delay: 4, duration: 1 }}
-            > */}
-                <form
-                    className="flex flex-col gap-6 p-10 bg-light_card_bg dark:bg-[#27272c] rounded-xl"
-                    onSubmit={handleSubmit}
-                    ref={form}
-                >
-                    <h3 className="text-4xl text-accent">
-                        {contactMeData.contactData.title}
-                    </h3>
-                    <p className="dark:text-white/60 text-black/80">
-                        {contactMeData.contactData.description}
-                    </p>
-                    <div className="grid grid-cols-1 gap-6">
-                        {
-                            contactMeData.contactData.input.map((item, i) =>
-                                <Input key={i} type={item.type} placeholder={item.placeHolder} name={item.name} />
-                            )
-                        }
-                    </div>
-                    <Textarea
-                        className="h-[200px]"
-                        placeholder={contactMeData.contactData.textArea.placeHolder}
-                        name={contactMeData.contactData.textArea.name}
-                    />
-                    <div className="flex gap-5 items-center">
-                        <Button size="md" className={`max-w-40 ${sending ? "cursor-not-allowed" : ""}`}>Send</Button>
-                        <Button size="md" onClick={handleReset} className="max-w-40">Reset</Button>
-                        {status === SUCCESS && <AnimatedMessage sequence={["Sent Successfully", 1000]} />}
-                        {status === FAILED && <AnimatedMessage sequence={["Sent Failed", 1000]} />}
-                    </div>
-                </form>
-            {/* </motion.div> */}
-        </div>
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: { delay: 2, duration: 0.4, ease: "easeIn" } }}
+            className="xl:w-[54%] order-2 xl:order-none relative"
+        >
+            <form
+                className="flex flex-col gap-6 p-10 bg-light_card_bg dark:bg-[#27272c] rounded-xl"
+                onSubmit={handleSubmit}
+                ref={form}
+            >
+                <h3 className="text-4xl text-accent">
+                    {contactMeData.contactData.title}
+                </h3>
+                <p className="dark:text-white/60 text-black/80">
+                    {contactMeData.contactData.description}
+                </p>
+                <div className="grid grid-cols-1 gap-6">
+                    {
+                        contactMeData.contactData.input.map((item, i) =>
+                            <Input key={i} type={item.type} placeholder={item.placeHolder} name={item.name} />
+                        )
+                    }
+                </div>
+                <Textarea
+                    className="h-[200px]"
+                    placeholder={contactMeData.contactData.textArea.placeHolder}
+                    name={contactMeData.contactData.textArea.name}
+                />
+                <div className="flex gap-5 items-center">
+                    <Button size="md" className={`max-w-40 ${sending ? "cursor-not-allowed" : ""}`}>Send</Button>
+                    <Button size="md" onClick={handleReset} className="max-w-40">Reset</Button>
+                    {status === SUCCESS && <AnimatedMessage sequence={["Sent Successfully", 1000]} />}
+                    {status === FAILED && <AnimatedMessage sequence={["Sent Failed", 1000]} />}
+                </div>
+            </form>
+        </motion.div>
     )
 }
 

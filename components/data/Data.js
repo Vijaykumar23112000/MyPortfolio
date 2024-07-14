@@ -32,7 +32,7 @@ export const socialsData = [
 ]
 
 export const photoData = {
-    img: "/assets/vj.png"
+    img: "/assets/vj1.png"
 }
 
 export const statsData = [
