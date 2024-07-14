@@ -258,7 +258,7 @@ export const contactMeData = {
         },
         {
             icon: <FaEnvelope />,
-            title: "EMail",
+            title: "E-Mail",
             content: "mathew5359302@gmail.com"
         },
     ]

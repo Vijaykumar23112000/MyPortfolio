@@ -3,6 +3,7 @@ import DownloadButton from "@/components/home/DownloadButton"
 import Photo from "@/components/home/Photo"
 import Socials from "@/components/home/Socials"
 import Stats from "@/components/home/Stats"
+import AnimatedName from "@/components/typeAnimation/AnimatedName"
 
 const Home = () => {
 
@@ -14,7 +15,8 @@ const Home = () => {
           <div className="text-center xl:text-left order-2 xl:order-none">
             <span className="text-xl dark:text-white/80 text-black/80 font-bold">{personal.signature}</span>
             <h1 className="h1 mb-6 dark:text-white/80 text-black/80">
-              Hello I'm  <br /> <span className="text-accent">{personal.fullName}</span>
+              Hello I'm  <br />
+              <AnimatedName name={personal.fullName} />
             </h1>
             <p className="max-w-[500px] mb-6 dark:text-white/80 text-black/80">
               {personal.bio}
