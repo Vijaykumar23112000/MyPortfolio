@@ -39,7 +39,7 @@ export const statsData = [
     { num: "7", text: "Technical Skills" }, // python , java , sql , javascript , typescript , html , css
     { num: "3", text: "Projects Completed" },
     { num: "5", text: "Technologies Utilized" }, // docker , springboot , react , nextjs , tailwind , 
-    { num: "167", text: "Contributions In Github" },
+    { num: "191", text: "Contributions In Github" },
 ]
 
 export const notFoundData = {
@@ -94,7 +94,7 @@ export const aboutMeData = {
         items: [
             { content: "SpringBoot", duration: "Dec 2023 - Mar 2024" },
             { content: "Front End Technologies", duration: "Mar 2024 - May 2024" },
-            { content: "Next Js", duration: "June 2024 - Present" },
+            { content: "Next Js & Microservices", duration: "June 2024 - Present" },
         ]
     },
     educationData: {
@@ -202,6 +202,30 @@ export const projectsData = [
         ],
         image: "/assets/projects/jwt.png",
         github: "https://github.com/Vijaykumar23112000/SpringSecurityJWT"
+    },
+    {
+        num: "03",
+        category: "Fullstack",
+        title: "Contact Management",
+        description:
+            `The Contact Management system is a full-stack application designed to manage contacts efficiently. 
+            Users can perform all CRUD operations—create, read, update, and delete contacts—through an intuitive 
+            interface. This project showcases my proficiency in both frontend and backend development, integrating 
+            a variety of technologies to deliver a seamless user experience. The frontend is built using Next.js 
+            and React Redux Toolkit for state management. Note that the primary focus was on functionality, so the 
+            frontend UI is minimal and hasn't been fully updated yet. The backend is developed using Spring Boot to 
+            create a robust RESTful API. PostgreSQL is used as the database, with Docker to create an instance of pgAdmin 
+            for database management. Postman was utilized to test the endpoints, ensuring reliable communication between 
+            the frontend and backend.`,
+        stack: [
+            { name: "Springboot" },
+            { name: "PostgreSQL" },
+            { name: "NextJS" },
+            { name: "React-Redux-Toolkit" },
+            { name: "Postman" },
+        ],
+        image: "/assets/projects/contact-management.jpg",
+        github: "https://github.com/Vijaykumar23112000/ContactManagement"
     },
 ]
 

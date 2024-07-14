@@ -75,17 +75,22 @@ const Projects = () => {
                                         key={i}
                                         className="w-full"
                                     >
-                                        <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20 rounded-2xl">
+                                        <motion.div 
+                                            initial={{ opacity: 0 }}
+                                            animate={{ opacity: 1, transition: { delay: 2.4, duration: 0.4, ease: "easeIn" } }}
+                                            className="h-[460px] relative group flex justify-center items-center bg-pink-50/20 rounded-2xl"
+                                        >
                                             <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10 rounded-2xl"></div>
                                             <div className="relative w-full h-full rounded-2xl">
                                                 <Image
                                                     src={item.image}
+                                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                                     fill
                                                     className="object-cover rounded-2xl cursor-grab"
                                                     alt={item.description}
                                                 />
                                             </div>
-                                        </div>
+                                        </motion.div>
                                     </SwiperSlide>
                                 )
                             }

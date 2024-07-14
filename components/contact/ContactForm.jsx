@@ -7,6 +7,8 @@ import { contactMeData } from "../data/Data"
 import emailjs from '@emailjs/browser';
 import React, { useEffect, useRef, useState } from 'react';
 import AnimatedMessage from "./AnimatedMessage"
+import { motion, useInView } from "framer-motion"
+import { ContactSvg } from "../svg/ContactSvg"
 
 const ContactForm = () => {
 
@@ -14,10 +16,13 @@ const ContactForm = () => {
 
     const form = useRef();
     const [status, setStatus] = useState(IDLE);
-
+    const ref = useRef()
     const SERVICE_ID = process.env.NEXT_PUBLIC_SERVICE_ID
     const TEMPLATE_ID = process.env.NEXT_PUBLIC_TEMPLATE_ID
     const PUBLIC_KEY = process.env.NEXT_PUBLIC_KEY
+    const isInView = useInView(ref, {
+        margin: "-100px"
+    })
 
     const handleSubmit = e => {
         e.preventDefault()
@@ -50,8 +55,23 @@ const ContactForm = () => {
     }, [status]);
 
     return (
-        <div className="xl:w-[54%] order-2 xl:order-none">
-            <form className="flex flex-col gap-6 p-10 bg-light_card_bg dark:bg-[#27272c] rounded-xl" onSubmit={handleSubmit} ref={form}>
+        <div ref={ref} className="xl:w-[54%] order-2 xl:order-none formContainer relative">
+            <motion.div
+                initial={{ opacity: 1 }}
+                whileInView={{ opacity: 0 }}
+                transition={{ delay: 3, duration: 1 }}
+                className="svg__container stroke-accent absolute mx-auto w-full h-full flex justify-center items-center"
+            >
+                <div className="">
+                    <ContactSvg isInView={isInView} />
+                </div>
+            </motion.div>
+            <motion.form
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 4, duration: 1 }}
+                className="flex flex-col gap-6 p-10 bg-light_card_bg dark:bg-[#27272c] rounded-xl" onSubmit={handleSubmit} ref={form}
+            >
                 <h3 className="text-4xl text-accent">
                     {contactMeData.contactData.title}
                 </h3>
@@ -76,7 +96,7 @@ const ContactForm = () => {
                     {status === SUCCESS && <AnimatedMessage sequence={["Sent Successfully", 1000]} />}
                     {status === FAILED && <AnimatedMessage sequence={["Sent Failed", 1000]} />}
                 </div>
-            </form>
+            </motion.form>
         </div>
     )
 }
